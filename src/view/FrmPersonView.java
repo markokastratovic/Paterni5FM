@@ -22,9 +22,9 @@ public class FrmPersonView extends javax.swing.JPanel {
     /**
      * Creates new form FrmPersonView
      */
-    public FrmPersonView() {
+    public FrmPersonView(JPanel personView) {
         initComponents();
-        prepareView();
+        prepareView(personView);
     }
 
     /**
@@ -91,10 +91,7 @@ public class FrmPersonView extends javax.swing.JPanel {
     private javax.swing.JPanel panelPerson;
     // End of variables declaration//GEN-END:variables
 
-    private void prepareView() {
-        // PersonViewFactory factory=new SimplePersonViewFactory();
-        PersonViewFactory factory = new AdvancedPersonViewFactory();
-        panelPerson.add(factory.getPersonView());
-
+    private void prepareView(JPanel panel) {
+        panelPerson.add(panel);
     }
 }

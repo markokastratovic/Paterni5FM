@@ -7,6 +7,7 @@ package view.factory;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import view.FrmPersonView;
 
 /**
  *
@@ -15,12 +16,14 @@ import javax.swing.JPanel;
 public abstract class PersonViewFactory {
 
     protected JFrame main;
+    protected JPanel panel;
 
     public abstract JPanel getPersonView();
 
     public void kreiraj() {
         main = new JFrame();
-        main.add(getPersonView());
+        panel = new FrmPersonView(getPersonView());
+        main.add(panel);
         main.pack();
         main.setVisible(true);
     }
